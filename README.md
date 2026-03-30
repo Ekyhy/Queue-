@@ -58,4 +58,53 @@ def enqueue(self, nama):
     self.currSize += 1
     return dataGabung
 ```
+### 2. Dequeue (Memanggil dan Menghapus Antrian)
+Operasi untuk menghapus data dari posisi paling depan (Front). Pada sistem ini, dequeue juga memicu fitur Text-to-Speech (TTS) untuk mengeja nomor antrian dan memanggil nama secara otomatis.
+
+**Java**
+
+```java
+public String dequeue() {
+    if (isEmpty()) {
+        tts.speak("Antrian Kosong! Isi antrian kembali!");
+        return "Antrian Kosong!";
+    }
+
+    String hapusData = depan.data;
+    depan = depan.next;
+    if(depan == null) belakang = null;
+
+    currSize--;
+
+    ejaNomor eja = new ejaNomor();
+    String[] parts = hapusData.split(" - ");
+    String nomor = parts[0];
+    String nama = parts[1];
+
+    String nomorEja = eja.ejaNomor(nomor);
+    tts.speak("Nomor antrian " + nomorEja + " atas nama " + nama + ", silakan ke loket");
+    
+    return hapusData;
+}
+```
+
+**Python**
+
+```python
+def dequeue(self):
+    data = self.queue.dequeue()
+
+    if data is None:
+        speak("Antrian kosong")
+        messagebox.showinfo("Info", "Antrian kosong")
+        return
+
+    nomor, nama = data.split(" - ")
+    nomor_eja = EjaNomor.eja(nomor)
+
+    teks = f"Nomor antrian {nomor_eja} atas nama {nama}, silakan ke loket"
+    speak(teks)
+
+    self.show_data()
+```
 
