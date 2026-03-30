@@ -13,7 +13,20 @@
 <h5>Java</h5>
 
 ```java
+ public void enqueue(String new_data){
+        String nomor = String.format("A    %03d" , 1 + nomorAntrian++);
+        String mixData = nomor + " - " + new_data;
 
+        Node new_node = new Node(mixData);
+        if (isEmpty()) {
+            depan = belakang = new_node;
+        } else {
+            belakang.next = new_node;
+            belakang = new_node;
+        }
+
+        currSize++;
+    }
 ```
 <h5>Python</h5>
 
@@ -40,6 +53,28 @@
 <h5>Java</h5>
 
 ```java
+    public String dequeue(){
+        if (isEmpty()){
+            tts.speak("Antrian Kosong! Isi antrian kembali!");
+            return "Antrian Kosong!";
+        }
+
+        String hapusData = depan.data;
+        depan = depan.next;
+        if(depan == null)belakang = null;
+
+        currSize--;
+
+        ejaNomor eja = new ejaNomor();
+
+        String[] parts = hapusData.split(" - ");
+        String nomor = parts[0];
+        String nama = parts[1];
+
+        String nomorEja = eja.ejaNomor(nomor);
+        tts.speak("Nomor antrian " + nomorEja + " atas nama " + nama + ", silakan ke loket");
+        return hapusData;
+    }
 
 ```
 
@@ -69,7 +104,7 @@ def dequeue(self):
 <h5>Java</h5>
 
 ```java
-
+import javazoom.jl.player.Player;
 ```
 
 <h5>Pyhton</h5>
