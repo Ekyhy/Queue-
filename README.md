@@ -8,3 +8,4 @@
 <li>Front : Pointer yang menunjukkan node pertama </li>
 <li>Rear : Pointer yang menunjukkan node terakhir </li>
 
+<h2>Operasi pada Queue</h2>
