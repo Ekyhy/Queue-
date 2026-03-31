@@ -108,3 +108,32 @@ def dequeue(self):
     self.show_data()
 ```
 
+## 📚 Library & Dependensi Sound (TTS) ##
+
+Untuk menjalankan fitur Text-to-Speech (Pemanggilan Suara), program ini membutuhkan library pihak ketiga. Pastikan Anda telah menginstalnya sebelum menjalankan program.
+
+### Dependensi Java
+Menggunakan JLayer untuk memutar file audio
+
+```java
+import javazoom.jl.player.Player;
+```
+<i>(Catatan: Harus dengan terlebih dahulu menambahkan file ```.jar``` JLayer ke dalam project structure/folder path yang digunakan) </i>
+
+### Dependensi Python
+
+Menggunakan gTTS (Google Text-to-Speech) untuk <i>generate</i> suara dan pygame untuk pemutarnya
+
+```pthon
+from gtts import gTTS
+import pygame
+```
+
+** Cara Install (Terminal/CMD)
+
+```bash
+pip install gTTS pygame
+```
+
+
+
