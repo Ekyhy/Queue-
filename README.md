@@ -129,7 +129,7 @@ from gtts import gTTS
 import pygame
 ```
 
-** Cara Install (Terminal/CMD)
+**Cara Install (Terminal/CMD)**
 
 ```bash
 pip install gTTS pygame
