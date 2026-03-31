@@ -113,7 +113,7 @@ def dequeue(self):
 Untuk menjalankan fitur Text-to-Speech (Pemanggilan Suara), program ini membutuhkan library pihak ketiga. Pastikan Anda telah menginstalnya sebelum menjalankan program.
 
 ### Dependensi Java
-Menggunakan JLayer untuk memutar file audio
+Menggunakan JLayer untuk memutar file audio.
 
 ```java
 import javazoom.jl.player.Player;
@@ -122,17 +122,49 @@ import javazoom.jl.player.Player;
 
 ### Dependensi Python
 
-Menggunakan gTTS (Google Text-to-Speech) untuk <i>generate</i> suara dan pygame untuk pemutarnya
+Menggunakan gTTS (Google Text-to-Speech) untuk <i>generate</i> suara dan pygame untuk pemutarnya.
 
 ```pthon
 from gtts import gTTS
 import pygame
 ```
-
 **Cara Install (Terminal/CMD)**
 
 ```bash
 pip install gTTS pygame
+```
+
+## 🚀 Cara Menjalankan Program (How to Run)
+
+### Java
+Karena program ini menggunakan *library* eksternal (**JLayer**) untuk memutar audio, Anda perlu memastikan *library* tersebut terbaca oleh sistem saat program dijalankan.
+
+**Menggunakan IDE (IntelliJ IDEA, Eclipse, NetBeans, dll):**
+1. Unduh library **JLayer** (biasanya bernama `jl1.0.1.jar`).
+2. Masukkan file `.jar` tersebut ke dalam direktori project Anda.
+3. Tambahkan file tersebut ke dalam **Build Path** atau **Project Dependencies** di pengaturan IDE Anda.
+4. Jalankan program dengan menekan tombol **Run** pada kelas utama (`Main`).
+
+**Menggunakan Terminal / Command Prompt:**
+Jika Anda ingin menjalankannya secara manual melalui terminal, gunakan perintah berikut (asumsikan file jar berada di folder yang sama dengan kode Anda):
+```bash
+# 1. Compile program
+javac -cp ".:jl1.0.1.jar" Main.java  # Gunakan tanda titik koma (;) pengganti titik dua (:) jika di Windows
+
+# 2. Jalankan program
+java -cp ".:jl1.0.1.jar" Main
+```
+### Python
+
+Menjalankan versi Python jauh lebih sederhana karena kita bisa memanfaatkan package manager bawaan (PIP).
+1. Buka Terminal atau CMD pada direktori tempat file Python dibuat.
+2. Pastikan sudah menginstall dependensi yang dibutuhkan dengan menjalankan perintah
+```bash
+pip install gTTS pygame
+```
+4. Jalankan file program dengan nama file yang telah dibuat sebelumnya (dalam kasus ini ``` q_LinkedList.py ```) :
+```bash
+python q_LinkedList.py
 ```
 
 
