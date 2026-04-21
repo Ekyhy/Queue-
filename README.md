@@ -149,10 +149,10 @@ Karena program ini menggunakan *library* eksternal (**JLayer**) untuk memutar au
 Jika Anda ingin menjalankannya secara manual melalui terminal, gunakan perintah berikut (asumsikan file jar berada di folder yang sama dengan kode Anda):
 ```bash
 # 1. Compile program
-javac -cp ".:jl1.0.1.jar" Main.java  # Gunakan tanda titik koma (;) pengganti titik dua (:) jika di Windows
+javac -cp ".;jl1.0.1.jar" QueueGUI.java
 
 # 2. Jalankan program
-java -cp ".:jl1.0.1.jar" Main
+java -cp ".;jl1.0.1.jar" QueueGUI
 ```
 ### Python
 
